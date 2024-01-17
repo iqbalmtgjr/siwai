@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client"
 import AddPegawai from "./AddPegawai";
-import DeletePegawai from "./deletePegawai";
-import UpdateProduct from "./updateProduct";
+import DeletePegawai from "./DeletePegawai";
+import UpdateProduct from "./UpdateProduct";
 const prisma = new PrismaClient();
 
 const getPegawais = async () => {

@@ -1,18 +1,18 @@
 "use client"
+
 import { useState, SyntheticEvent } from "react"
-// import type { Brand } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import bcrypt from "bcryptjs";
 
 const addPegawai = () => {
-    const [nik, setNik] = useState("")
-    const [nama, setNama] = useState("")
-    const [email, setEmail] = useState("")
-    const [jeniskelamin, setJeniskelamin] = useState("")
-    const [agama, setAgama] = useState("")
-    const [alamat, setAlamat] = useState("")
-    const [password, setPassword] = useState("")
+    const [nik, setNik] = useState('')
+    const [nama, setNama] = useState('')
+    const [email, setEmail] = useState('')
+    const [jeniskelamin, setJeniskelamin] = useState('')
+    const [agama, setAgama] = useState('')
+    const [alamat, setAlamat] = useState('')
+    const [password, setPassword] = useState('')
     const [isOpen, setIsOpen] = useState(false);
     
     const router = useRouter();
@@ -30,13 +30,13 @@ const addPegawai = () => {
             alamat: alamat,
             password: hashedPassword
         })
-        setNik("")
-        setNama("")
-        setEmail("")
-        setJeniskelamin("")
-        setAgama("")
-        setAlamat("")
-        setPassword("")
+        setNik('')
+        setNama('')
+        setEmail('')
+        setJeniskelamin('')
+        setAgama('')
+        setAlamat('')
+        setPassword('')
         router.refresh();
         setIsOpen(false);
     }

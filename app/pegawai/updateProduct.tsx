@@ -15,17 +15,14 @@ type Pegawai = {
 };
 
 const updatePegawai = ({pegawai}: {pegawai: Pegawai}) => {
-    // const [title, setTitle] = useState(pegawai.title)
-    // const [price, setPrice] = useState(pegawai.price)
-    // const [brand, setBrand] = useState(pegawai.brandId)
-
     const [nik, setNik] = useState(pegawai.nik)
     const [nama, setNama] = useState(pegawai.nama)
     const [email, setEmail] = useState(pegawai.email)
     const [jeniskelamin, setJeniskelamin] = useState(pegawai.jeniskelamin)
     const [agama, setAgama] = useState(pegawai.agama)
     const [alamat, setAlamat] = useState(pegawai.alamat)
-    const [isOpen, setIsOpen] = useState(false);
+
+    const [isOpen, setIsOpen] = useState(false)
 
     const router = useRouter();
     
@@ -38,7 +35,7 @@ const updatePegawai = ({pegawai}: {pegawai: Pegawai}) => {
             jeniskelamin: jeniskelamin,
             agama: agama,
             alamat: alamat,
-        })
+        });
         router.refresh();
         setIsOpen(false);
     }
@@ -88,10 +85,15 @@ const updatePegawai = ({pegawai}: {pegawai: Pegawai}) => {
                     </div>
                     <div className="form-control w-full">
                         <label className="label font-bold">Alamat</label>
-                        <textarea onChange={(e) => setAlamat(e.target.value)}
+                        <textarea
+                            onChange={(e) => setAlamat(e.target.value)}
                             className="input input-bordered h-20"
-                            // rows={3}
-                            placeholder="Alamat">{alamat}</textarea>
+                            placeholder="Alamat Lengkap"
+                            value={alamat}
+                        >{alamat}</textarea>
+                        {/* <textarea value={alamat} onChange={(e) => setAlamat(e.target.value)}
+                            className="input input-bordered h-20"
+                            placeholder="Alamat Lengkap" /> */}
                     </div>
                     <div className="modal-action">
                         <button type="button" className="btn" onClick={handleModal}>Close</button>

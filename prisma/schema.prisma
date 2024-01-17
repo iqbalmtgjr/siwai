@@ -28,13 +28,13 @@ datasource db {
 
 model Pegawai {
   id           Int      @id @default(autoincrement())
-  nik          String
+  email        String   @unique
+  nik          String   @unique
   nama         String
-  email        String
   password     String
-  jeniskelamin String
-  agama        String
-  alamat       String
+  jeniskelamin String?
+  agama        String?
+  alamat       String?
   createdAt    DateTime @default(now())
   updateAt     DateTime @updatedAt
 }

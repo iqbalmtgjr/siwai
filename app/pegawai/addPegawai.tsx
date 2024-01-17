@@ -19,7 +19,6 @@ const addPegawai = () => {
 
     const handleSubmit = async (e: SyntheticEvent) => {
         
-        
         e.preventDefault()
         const hashedPassword = await bcrypt.hash(password, 10);
         await axios.post('/api/pegawai', {
@@ -88,27 +87,16 @@ const addPegawai = () => {
                     <div className="form-control w-full">
                         <label className="label font-bold">Alamat</label>
                         <textarea onChange={(e) => setAlamat(e.target.value)}
-                            className="input input-bordered h-20"
-                            // rows={3}
-                            placeholder="Alamat">{alamat}</textarea>
+                            className="input input-bordered h-20" placeholder="Alamat">{alamat}</textarea>
                     </div>
                         
                     <div className="form-control w-full">
                         <label className="label font-bold">Password</label>
                         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input input-bordered" placeholder="Password" />
                     </div>
-                    {/* <div className="form-control w-full">
-                        <label className="label font-bold">Brand</label>
-                        <select value={brand} onChange={(e) => setBrand(e.target.value)} className="select select-bordered">
-                            <option value="" disabled>Select a Brand</option>
-                            {brands.map((brand) => (
-                                <option value={brand.id} key={brand.id}>{brand.name}</option>
-                            ))}
-                        </select>
-                    </div> */}
                     <div className="modal-action">
-                        <button type="button" className="btn" onClick={handleModal}>Close</button>
-                        <button type="submit" className="btn btn-primary">Save</button>
+                        <button type="button" className="btn" onClick={handleModal}>Tutup</button>
+                        <button type="submit" className="btn btn-primary">Simpan</button>
                     </div>
                 </form>
             </div>

@@ -1,25 +1,34 @@
-const Navbar = () => {
+import { signOut } from 'next-auth/react';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth';
+import UserAccountNav from '../UserAccountnav';
+
+const Navbar = async () => {
+    const session = await getServerSession(authOptions)
+
   return (
     <div>
         <div className="navbar bg-base-100">
             <div className="flex-1">
-                <a className="btn btn-ghost text-xl">SIWAI</a>
+                <a className="btn btn-ghost text-xl">SIWAI {session?.user.nama}</a>
             </div>
             <div className="flex-none gap-2">
-                <div className="dropdown dropdown-end">
-                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                    <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                    </div>
-                </div>
-                <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-                    <li><a>Logout</a></li>
-                </ul>
-                </div>
-            </div>
+            {session ? (
+            // Jika sudah login, tampilkan tombol logout
+            <UserAccountNav/>
+            ) : (
+            // Jika belum login, tampilkan tombol login
+            <a href='/auth/signin' className="btn">
+              Login
+            </a>
+            // <button className='btn' onClick={handleLogin()}>Login</button>
+            // <button className="w-full btn btn-primary mt-5" onClick={() => signIn() } >Halaman Login</button>
+            )}
         </div>
+      </div>
     </div>
-  )
-}
+    // </SessionProvider>
+  );
+};
 
-export default Navbar
+export default Navbar;

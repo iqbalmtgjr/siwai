@@ -49,8 +49,8 @@ const Pegawai = async () => {
                         <td>{pegawai.email}</td>
                         <td>{pegawai.jeniskelamin}</td>
                         <td className="flex justify-center space-x-1">
-                            <UpdateProduct pegawai={pegawai} />
-                            <DeletePegawai pegawai={pegawai}/>
+                            {/* <UpdateProduct pegawai={pegawai} /> */}
+                            {/* <DeletePegawai pegawai={pegawai}/> */}
                         </td>
                     </tr>
                 ))}

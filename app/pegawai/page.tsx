@@ -1,7 +1,8 @@
 import { PrismaClient } from "@prisma/client"
 import AddPegawai from "./AddPegawai";
+import UpdatePegawai from "./UpdatePegawai";
 import DeletePegawai from "./DeletePegawai";
-import UpdateProduct from "./UpdateProduct";
+
 const prisma = new PrismaClient();
 
 const getPegawais = async () => {
@@ -49,8 +50,8 @@ const Pegawai = async () => {
                         <td>{pegawai.email}</td>
                         <td>{pegawai.jeniskelamin}</td>
                         <td className="flex justify-center space-x-1">
-                            {/* <UpdateProduct pegawai={pegawai} /> */}
-                            {/* <DeletePegawai pegawai={pegawai}/> */}
+                            <UpdatePegawai pegawai={pegawai} />
+                            <DeletePegawai pegawai={pegawai}/>
                         </td>
                     </tr>
                 ))}

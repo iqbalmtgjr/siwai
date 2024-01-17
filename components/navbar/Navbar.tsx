@@ -2,6 +2,7 @@ import { signOut } from 'next-auth/react';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import UserAccountNav from '../UserAccountnav';
+import Link from 'next/link';
 
 const Navbar = async () => {
     const session = await getServerSession(authOptions)
@@ -14,20 +15,15 @@ const Navbar = async () => {
             </div>
             <div className="flex-none gap-2">
             {session ? (
-            // Jika sudah login, tampilkan tombol logout
             <UserAccountNav/>
             ) : (
-            // Jika belum login, tampilkan tombol login
-            <a href='/auth/signin' className="btn">
+            <Link href='/auth/signin' className="btn">
               Login
-            </a>
-            // <button className='btn' onClick={handleLogin()}>Login</button>
-            // <button className="w-full btn btn-primary mt-5" onClick={() => signIn() } >Halaman Login</button>
+            </Link>
             )}
         </div>
       </div>
     </div>
-    // </SessionProvider>
   );
 };
 

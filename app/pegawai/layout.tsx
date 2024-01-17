@@ -10,7 +10,9 @@ const PageLayout = ({children}: {children: React.ReactNode}) => {
   return (
       <div>
         <Navbar/>
-        <Sidebar children={children}/>  
+        <Sidebar>
+          {children}
+        </Sidebar> 
         <Footer/>
       </div>
   )

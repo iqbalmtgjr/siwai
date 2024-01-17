@@ -13,6 +13,8 @@ const getPegawais = async () => {
             nama: true,
             email: true,
             jeniskelamin: true,
+            agama: true,
+            alamat: true,
         }
     });
     return res;

@@ -14,7 +14,7 @@ type Pegawai = {
     alamat: string;
 };
 
-const updatePegawai = ({pegawai}: {pegawai: Pegawai}) => {
+const UpdatePegawai = ({pegawai}: {pegawai: Pegawai}) => {
     const [nik, setNik] = useState(pegawai.nik)
     const [nama, setNama] = useState(pegawai.nama)
     const [email, setEmail] = useState(pegawai.email)
@@ -106,4 +106,4 @@ const updatePegawai = ({pegawai}: {pegawai: Pegawai}) => {
   )
 }
 
-export default updatePegawai
+export default UpdatePegawai

@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client"
-import AddPegawai from "./addPegawai";
+import AddPegawai from "./AddPegawai";
 import DeletePegawai from "./deletePegawai";
 import UpdateProduct from "./updateProduct";
 const prisma = new PrismaClient();

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import bcrypt from "bcryptjs";
 
-const addPegawai = () => {
+const AddPegawai = () => {
     const [nik, setNik] = useState('')
     const [nama, setNama] = useState('')
     const [email, setEmail] = useState('')
@@ -105,4 +105,4 @@ const addPegawai = () => {
   )
 }
 
-export default addPegawai
+export default AddPegawai

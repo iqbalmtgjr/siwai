@@ -13,7 +13,7 @@ type Pegawai = {
     alamat: string;
 }
 
-const deletePegawai = ({pegawai}: {pegawai: Pegawai}) => {
+const DeletePegawai = ({pegawai}: {pegawai: Pegawai}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const router = useRouter();
@@ -45,4 +45,4 @@ const deletePegawai = ({pegawai}: {pegawai: Pegawai}) => {
   )
 }
 
-export default deletePegawai
+export default DeletePegawai

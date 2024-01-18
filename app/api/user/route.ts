@@ -8,7 +8,7 @@ const prisma = new PrismaClient()
 export const POST = async (req: Request) => {
    try {
      const body = await req.json();
-     const { nik, nama, email, password, jeniskelamin, agama, alamat } = body;
+     const { nik, nama, email, password, jeniskelamin, agama, alamat, jabatan } = body;
 
    //   const body: Pegawai = await req.json();
 
@@ -38,6 +38,7 @@ export const POST = async (req: Request) => {
             jeniskelamin: body.jeniskelamin,
             agama: agama,
             alamat: alamat,
+            jabatan: jabatan,
             password: hashedPassword
         }
      })

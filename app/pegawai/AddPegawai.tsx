@@ -13,6 +13,7 @@ const AddPegawai = () => {
     const [agama, setAgama] = useState('')
     const [alamat, setAlamat] = useState('')
     const [password, setPassword] = useState('')
+    const [jabatan, setJabatan] = useState('')
     const [isOpen, setIsOpen] = useState(false);
     
     const router = useRouter();
@@ -28,6 +29,7 @@ const AddPegawai = () => {
             jeniskelamin: jeniskelamin,
             agama: agama,
             alamat: alamat,
+            jabatan: jabatan,
             password: hashedPassword
         })
         setNik('')
@@ -37,6 +39,7 @@ const AddPegawai = () => {
         setAgama('')
         setAlamat('')
         setPassword('')
+        setJabatan('')
         router.refresh();
         setIsOpen(false);
     }
@@ -89,7 +92,15 @@ const AddPegawai = () => {
                         <textarea onChange={(e) => setAlamat(e.target.value)}
                             className="input input-bordered h-20" placeholder="Alamat">{alamat}</textarea>
                     </div>
-                        
+                    <div className="form-control w-full">
+                        <label className="label font-bold">Jabatan</label>
+                        <select value={jabatan} onChange={(e) => setJabatan(e.target.value)} className="input input-bordered">
+                            <option value="" disabled>--Pilih Jabatan--</option>
+                            <option value="asn">ASN</option>
+                            <option value="pppk">PPPK</option>
+                            <option value="honor">Honor</option>
+                        </select>
+                    </div>
                     <div className="form-control w-full">
                         <label className="label font-bold">Password</label>
                         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input input-bordered" placeholder="Password" />

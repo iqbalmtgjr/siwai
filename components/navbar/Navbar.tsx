@@ -18,9 +18,7 @@ const Navbar = async () => {
             <UserAccountNav/>
             ) : (
             <Link href='/auth/signin' className="btn">
-              <a>
               Login
-              </a>
             </Link>
             )}
         </div>

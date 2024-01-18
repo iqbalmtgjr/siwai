@@ -15,15 +15,11 @@ const getPegawais = async () => {
             jeniskelamin: true,
             agama: true,
             alamat: true,
+            jabatan: true,
         }
     });
     return res;
 }
-
-// const getBrands = async () => {
-//     const res = await prisma.brand.findMany();
-//     return res
-// }
 
 const Pegawai = async () => {
     const [pegawais] = await Promise.all([getPegawais()]);
@@ -40,7 +36,8 @@ const Pegawai = async () => {
                     <th>Nama</th>
                     <th>Email</th>
                     <th>Jenis Kelamin</th>
-                    <th className="text-center">Actions</th>
+                    <th>Jabatan</th>
+                    <th className="text-center">Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,6 +48,7 @@ const Pegawai = async () => {
                         <td>{pegawai.nama}</td>
                         <td>{pegawai.email}</td>
                         <td>{pegawai.jeniskelamin}</td>
+                        <td>{pegawai.jabatan}</td>
                         <td className="flex justify-center space-x-1">
                             <UpdatePegawai pegawai={pegawai} />
                             <DeletePegawai pegawai={pegawai}/>

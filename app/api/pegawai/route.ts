@@ -13,6 +13,7 @@ export const POST = async (request: Request) => {
             jeniskelamin: body.jeniskelamin,
             agama: body.agama,
             alamat: body.alamat,
+            jabatan: body.jabatan,
             password: body.password,
         }
     });

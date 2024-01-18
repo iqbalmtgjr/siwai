@@ -16,6 +16,7 @@ export const PATCH = async (request: Request, {params}: {params: {id: string}}) 
             jeniskelamin: body.jeniskelamin,
             agama: body.agama,
             alamat: body.alamat,
+            jabatan: body.jabatan,
         }
     });
     return NextResponse.json(pegawai, {status: 200})

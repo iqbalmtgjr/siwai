@@ -12,6 +12,7 @@ type Pegawai = {
     jeniskelamin: string;
     agama: string;
     alamat: string;
+    jabatan: string;
 };
 
 const UpdatePegawai = ({pegawai}: {pegawai: Pegawai}) => {
@@ -21,6 +22,7 @@ const UpdatePegawai = ({pegawai}: {pegawai: Pegawai}) => {
     const [jeniskelamin, setJeniskelamin] = useState(pegawai.jeniskelamin)
     const [agama, setAgama] = useState(pegawai.agama)
     const [alamat, setAlamat] = useState(pegawai.alamat)
+    const [jabatan, setJabatan] = useState(pegawai.jabatan)
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -35,6 +37,7 @@ const UpdatePegawai = ({pegawai}: {pegawai: Pegawai}) => {
             jeniskelamin: jeniskelamin,
             agama: agama,
             alamat: alamat,
+            jabatan: jabatan,
         });
         router.refresh();
         setIsOpen(false);
@@ -49,7 +52,7 @@ const UpdatePegawai = ({pegawai}: {pegawai: Pegawai}) => {
         <button className="btn btn-info btn-sm" onClick={handleModal}>Edit</button>
         <div className={isOpen ? 'modal modal-open' : 'modal'}>
             <div className="modal-box">
-                <h3 className="font-bold text-lg">Tambah Pegawai Baru</h3>
+                <h3 className="font-bold text-lg">Edit Data Pegawai</h3>
                 <form onSubmit={handleUpdate}>
                     <div className="form-control w-full">
                         <label className="label font-bold">NIK</label>
@@ -91,9 +94,15 @@ const UpdatePegawai = ({pegawai}: {pegawai: Pegawai}) => {
                             placeholder="Alamat Lengkap"
                             value={alamat}
                         >{alamat}</textarea>
-                        {/* <textarea value={alamat} onChange={(e) => setAlamat(e.target.value)}
-                            className="input input-bordered h-20"
-                            placeholder="Alamat Lengkap" /> */}
+                    </div>
+                    <div className="form-control w-full">
+                        <label className="label font-bold">Jabatan</label>
+                        <select value={jabatan} onChange={(e) => setJabatan(e.target.value)} className="input input-bordered">
+                            <option value="" disabled>--Pilih Jabatan--</option>
+                            <option value="asn">ASN</option>
+                            <option value="pppk">PPPK</option>
+                            <option value="honor">Honor</option>
+                        </select>
                     </div>
                     <div className="modal-action">
                         <button type="button" className="btn" onClick={handleModal}>Close</button>

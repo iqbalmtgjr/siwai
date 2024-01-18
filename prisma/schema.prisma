@@ -35,6 +35,7 @@ model Pegawai {
   jeniskelamin String?
   agama        String?
   alamat       String?
+  jabatan      String?
   createdAt    DateTime @default(now())
   updateAt     DateTime @updatedAt
 }

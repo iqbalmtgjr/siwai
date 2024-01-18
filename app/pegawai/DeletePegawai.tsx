@@ -12,6 +12,7 @@ type Pegawai = {
     jeniskelamin: string;
     agama: string;
     alamat: string;
+    jabatan: string;
 }
 
 const DeletePegawai = ({pegawai}: {pegawai: Pegawai}) => {

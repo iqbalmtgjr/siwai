@@ -90,7 +90,7 @@ const AddPegawai = () => {
                     <div className="form-control w-full">
                         <label className="label font-bold">Alamat</label>
                         <textarea onChange={(e) => setAlamat(e.target.value)}
-                            className="input input-bordered h-20" placeholder="Alamat">{alamat}</textarea>
+                            className="input input-bordered h-20" placeholder="Alamat"></textarea>
                     </div>
                     <div className="form-control w-full">
                         <label className="label font-bold">Jabatan</label>

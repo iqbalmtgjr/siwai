@@ -11,7 +11,7 @@ const Navbar = async () => {
     <div>
         <div className="navbar bg-base-100">
             <div className="flex-1">
-                <a className="btn btn-ghost text-xl">SIWAI {session?.user.nama}</a>
+                <a className="btn btn-ghost text-xl">SIWAI</a>
             </div>
             <div className="flex-none gap-2">
             {session ? (
